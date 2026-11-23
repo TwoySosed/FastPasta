@@ -22,3 +22,9 @@
 Стэк:
 - HTML/CSS/JS
 - Tauri
+
+Снимки этапа разработки по настоящее время:
+<p>
+  <img src="fastpasta/src/assets/short-time_assets/screen1.png" width="600" alt="screen 1">
+  <img src="fastpasta/src/assets/short-time_assets/screen2.png" width="600" alt="screen 2">
+</p>
