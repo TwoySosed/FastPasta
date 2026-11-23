@@ -1,6 +1,6 @@
 # FastPasta
 <p align="center">
-  <img src="assets/logo.PNG" width="180" alt="FastPasta Logo">
+  <img src="fastpasta/assets/logo.PNG" width="180" alt="FastPasta Logo">
 </p>
 
 Лёгкий менеджер для быстрой работы с заметками, сниппетами кода, идеями и задачами. 
@@ -18,3 +18,7 @@
 - Markdown-оформление
 - Избранное
 - Светлая/тёмная тема
+
+Стэк:
+- HTML/CSS/JS
+- Tauri
