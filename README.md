@@ -3,6 +3,12 @@
   <img src="fastpasta/src/assets/logo.PNG" width="180" alt="FastPasta Logo">
 </p>
 
+![License](https://img.shields.io/github/license/TwoySosed/FastPasta)
+![Last Commit](https://img.shields.io/github/last-commit/TwoySosed/FastPasta)
+
+![Tauri](https://img.shields.io/badge/Tauri-24C8DB?logo=tauri&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow?logo=javascript)
+
 Лёгкий менеджер для быстрой работы с заметками, сниппетами кода, идеями и задачами. 
 Проект вдохновлён Obsidian, но ориентирован на быстрый доступ и простоту использования.
 
