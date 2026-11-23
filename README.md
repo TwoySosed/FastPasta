@@ -1,6 +1,6 @@
 # FastPasta
 <p align="center">
-  <img src="fastpasta/assets/logo.PNG" width="180" alt="FastPasta Logo">
+  <img src="fastpasta/src/assets/logo.PNG" width="180" alt="FastPasta Logo">
 </p>
 
 Лёгкий менеджер для быстрой работы с заметками, сниппетами кода, идеями и задачами. 
