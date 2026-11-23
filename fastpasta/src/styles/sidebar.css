@@ -1,0 +1,302 @@
+/* =========================
+   ОСНОВНЫЕ НАСТРОЙКИ
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", Roboto, sans-serif;
+    background: var(--page-bg);
+    transition: background 0.3s ease;
+    min-height: 100vh;
+}
+/* =========================
+   ПЕРЕМЕННЫЕ ТЁМНОЙ ТЕМЫ
+========================= */
+:root {
+    --sidebar-bg: #1e293b;
+    --sidebar-border: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --hover-bg: #334155;
+    --active-bg: #475569;
+    --page-bg: #111827;
+}
+/* =========================
+   СВЕТЛАЯ ТЕМА
+========================= */
+body.light-theme {
+    --sidebar-bg: #ffffff;
+    --sidebar-border: #e5e7eb;
+    --text-primary: #334155;
+    --text-secondary: #64748b;
+    --hover-bg: #f1f5f9;
+    --active-bg: #e2e8f0;
+    --page-bg: #f1f5f9;
+}
+/* =========================
+   САЙДБАР
+========================= */
+.sidebar {
+    position: relative;
+    width: 260px;
+    min-width: 260px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 12px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    transition:
+        width 0.3s ease,
+        min-width 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+/* =========================
+   КНОПКА СВОРАЧИВАНИЯ
+========================= */
+.collapse-btn {
+    position: absolute;
+
+    top: 50%;
+    right: -13px;
+
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--sidebar-bg);
+    border: 1px solid var(--sidebar-border);
+    border-radius: 50%;
+
+    color: var(--text-primary);
+    font-size: 22px;
+
+    cursor: pointer;
+    z-index: 10;
+
+    transform: translateY(-50%);
+
+    transition: background 0.2s ease;
+}
+
+.collapse-btn:hover {
+    background: var(--active-bg);
+}
+
+#collapseIcon {
+    display: inline-block;
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed #collapseIcon {
+    transform: rotate(180deg);
+}
+/* =========================
+   ШАПКА
+========================= */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px 20px;
+    border-bottom: 1px solid var(--sidebar-border);
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transform: translateY(-1px);
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.app-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+/* =========================
+   ОСНОВНОЕ МЕНЮ
+========================= */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 18px;
+}
+.menu-item {
+    position: relative;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 0 12px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+.menu-item svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.menu-item span {
+    white-space: nowrap;
+}
+.menu-item:hover {
+    background: var(--hover-bg);
+    color: var(--text-primary);
+}
+.menu-item.active {
+    background: var(--active-bg);
+    color: var(--text-primary);
+}
+/* =========================
+   НИЖНЯЯ ЧАСТЬ
+========================= */
+.sidebar-footer {
+    margin-top: auto;
+    padding: 15px 12px 5px;
+    border-top: 1px solid var(--sidebar-border);
+}
+/* =========================
+   ВЫБОР ТЕМЫ
+========================= */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.theme-title {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+.theme-options {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.theme-option {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition:
+        outline-color 0.2s ease,
+        transform 0.2s ease;
+}
+.theme-option:hover {
+    transform: scale(1.12);
+}
+.light-option {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+}
+.dark-option {
+    background: #111111;
+    border: 1px solid #64748b;
+}
+.theme-option.selected {
+    outline-color: #818cf8;
+}
+/* =========================
+   СВЁРНУТЫЙ САЙДБАР
+========================= */
+.sidebar.collapsed {
+    width: 76px;
+    min-width: 76px;
+}
+.sidebar.collapsed .app-name,
+.sidebar.collapsed .menu-item span,
+.sidebar.collapsed .theme-title {
+    display: none;
+}
+.sidebar.collapsed .sidebar-header {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidebar.collapsed .logo {
+    margin: 0;
+}
+.sidebar.collapsed .menu-item {
+    justify-content: center;
+    padding: 0;
+}
+.sidebar.collapsed .sidebar-footer {
+    padding-left: 0;
+    padding-right: 0;
+}
+.sidebar.collapsed .theme-switch {
+    flex-direction: column;
+    gap: 12px;
+}
+.sidebar.collapsed .theme-options {
+    flex-direction: column;
+    gap: 12px;
+}
+.sidebar.collapsed #collapseIcon {
+    transform: rotate(180deg);
+}
+/* =========================
+   ПОДСКАЗКИ В СВЁРНУТОМ МЕНЮ
+========================= */
+.sidebar.collapsed .menu-item:hover::after {
+    content: attr(title);
+    position: absolute;
+    left: 65px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 7px 12px;
+    background: var(--active-bg);
+    color: var(--text-primary);
+    font-size: 13px;
+    white-space: nowrap;
+    border-radius: 5px;
+    z-index: 20;
+    pointer-events: none;
+}
+/* =========================
+   АДАПТАЦИЯ
+========================= */
+@media (max-width: 480px) {
+    .sidebar:not(.collapsed) {
+        width: 230px;
+        min-width: 230px;
+    }
+}
