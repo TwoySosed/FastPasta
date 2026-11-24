@@ -1,0 +1,74 @@
+/* =========================
+   ПЕРЕМЕННЫЕ ТЁМНОЙ ТЕМЫ
+   (тема по умолчанию)
+========================= */
+:root {
+    --sidebar-bg: #1e293b;
+    --sidebar-border: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --hover-bg: #334155;
+    --active-bg: #475569;
+    --page-bg: #111827;
+    --card-bg: #1f2937;
+    --card-footer-bg: rgba(15, 23, 42, 0.35);
+}
+/* =========================
+   СВЕТЛАЯ ТЕМА
+========================= */
+body.light-theme {
+    --sidebar-bg: #ffffff;
+    --sidebar-border: #e5e7eb;
+    --text-primary: #334155;
+    --text-secondary: #7d858f;
+    --hover-bg: #f1f5f9;
+    --active-bg: #e2e8f0;
+    --page-bg: #f1f5f9;
+    --card-bg: #ffffff;
+    --card-footer-bg: rgba(225, 225, 225, 0.35);
+}
+/* =========================
+   ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ
+========================= */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.theme-title {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+.theme-options {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.theme-option {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition:
+        outline-color 0.2s ease,
+        transform 0.2s ease;
+}
+.theme-option:hover {
+    transform: scale(1.12);
+}
+.light-option {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+}
+.dark-option {
+    background: #111111;
+    border: 1px solid #64748b;
+}
+.theme-option.selected {
+    outline-color: #818cf8;
+}
