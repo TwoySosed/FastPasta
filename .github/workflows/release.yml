@@ -38,13 +38,15 @@ jobs:
             patchelf \
             xdg-utils
       - name: Install dependencies
+        working-directory: ./fastpasta
         run: npm install
       - name: Build application
         uses: tauri-apps/tauri-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          projectPath: ./fastpasta
           tagName: ${{ github.ref_name }}
           releaseName: 'FastPasta ${{ github.ref_name }}'
-          releaseDraft: true
-          prerelease: false
+          releaseDraft: false
+          prerelease: true
